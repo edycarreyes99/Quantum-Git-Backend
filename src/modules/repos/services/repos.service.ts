@@ -1,9 +1,16 @@
 import { Injectable } from "@nestjs/common";
+import { IAuthenticatedUser } from "../../auth/interfaces/authenticated-user.interface";
 
 @Injectable()
 export class ReposService {
-  findAll() {
-    return `This action returns all repos`;
+
+  constructor() {
+  }
+
+  findAll(authenticatedUser: IAuthenticatedUser): Promise<any> {
+    return new Promise<any>(async (resolve, rejects) => {
+      resolve(`This action returns all repos`);
+    });
   }
 
   findOne(id: number) {
