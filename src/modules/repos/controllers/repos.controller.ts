@@ -1,9 +1,10 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from "@nestjs/common";
+import { Controller, Get, Param } from "@nestjs/common";
 import { ReposService } from "../services/repos.service";
 
 @Controller("repos")
 export class ReposController {
-  constructor(private readonly reposService: ReposService) {}
+  constructor(private readonly reposService: ReposService) {
+  }
 
 
   @Get()

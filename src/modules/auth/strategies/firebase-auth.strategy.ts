@@ -1,6 +1,6 @@
 import { PassportStrategy } from "@nestjs/passport";
 import { Injectable, Logger, UnauthorizedException } from "@nestjs/common";
-import { Strategy, ExtractJwt } from "passport-firebase-jwt";
+import { ExtractJwt, Strategy } from "passport-firebase-jwt";
 import * as firebase from "firebase-admin";
 import { DecodedIdToken } from "firebase-admin/lib/auth";
 import * as dotenv from "dotenv";
@@ -17,7 +17,7 @@ const firebase_params = {
   authUri: process.env.QUANTUM_GIT_FIREBASE_AUTH_URI,
   tokenUri: process.env.QUANTUM_GIT_FIREBASE_TOKEN_URI,
   authProviderX509CertUrl:
-    process.env.QUANTUM_GIT_FIREBASE_AUTH_PROVIDER_X509_CERT_URL,
+  process.env.QUANTUM_GIT_FIREBASE_AUTH_PROVIDER_X509_CERT_URL,
   clientC509CertUrl: process.env.QUANTUM_GIT_FIREBASE_CLIENT_X509_CERT_URL,
 };
 

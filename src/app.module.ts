@@ -15,4 +15,5 @@ import { ReposModule } from "./modules/repos/repos.module";
   exports: [PassportModule],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+}
