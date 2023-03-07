@@ -7,7 +7,7 @@ export function parsePaginationString(paginationString: string): IPagination {
     next: null,
     last: null,
   };
-  const paginationArray = this.paginationString.match(/<([^;]*)>; rel="([^;]*)"/g);
+  const paginationArray = paginationString.match(/<([^;]*)>; rel="([^;]*)"/g);
 
   paginationArray?.forEach((link: string) => {
     const urlParams = new URLSearchParams(link.match(/<([^;]*)>/g)?.at(0));
