@@ -1,6 +1,6 @@
-import * as moment from 'moment';
-import { IRepoOwner } from './repo-owner.interface';
-import { IRepoPermission } from './repo-permission.interface';
+import * as moment from "moment";
+import { IRepoOwner } from "./repo-owner.interface";
+import { IRepoPermission } from "./repo-permission.interface";
 
 export interface IRepo {
   id: number;
