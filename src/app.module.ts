@@ -6,6 +6,7 @@ import { PassportModule } from "@nestjs/passport";
 import { ReposModule } from "./modules/repos/repos.module";
 import { BranchesModule } from './modules/branches/branches.module';
 import { UsersModule } from './modules/users/users.module';
+import { CommitsModule } from './modules/commits/commits.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { UsersModule } from './modules/users/users.module';
     ReposModule,
     BranchesModule,
     UsersModule,
+    CommitsModule,
   ],
   controllers: [AppController],
   exports: [PassportModule],
