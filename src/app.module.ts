@@ -1,6 +1,4 @@
 import { Module } from "@nestjs/common";
-import { AppController } from "./app.controller";
-import { AppService } from "./app.service";
 import { AuthModule } from "./modules/auth/auth.module";
 import { PassportModule } from "@nestjs/passport";
 import { ReposModule } from "./modules/repos/repos.module";
@@ -17,9 +15,9 @@ import { CommitsModule } from "./modules/commits/commits.module";
     UsersModule,
     CommitsModule,
   ],
-  controllers: [AppController],
+  controllers: [],
   exports: [PassportModule],
-  providers: [AppService],
+  providers: [],
 })
 export class AppModule {
 }

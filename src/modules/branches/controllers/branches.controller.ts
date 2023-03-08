@@ -4,7 +4,15 @@ import { AuthenticatedGuard } from "../../auth/guards/authenticated/authenticate
 import { IPaginatedResponse } from "../../../core/interfaces/paginated-response.interface";
 import { IBranch } from "../interfaces/branch.interface";
 import { AuthenticatedUser } from "../../auth/decorators/authenticated-user.decorator";
+import { ApiBearerAuth, ApiHeader, ApiTags } from "@nestjs/swagger";
 
+@ApiTags("Branches")
+@ApiBearerAuth()
+@ApiHeader({
+  name: "Secondary_Authorization",
+  description: "GitHub Access Token",
+  required: true,
+})
 @Controller("branches")
 @UseGuards(AuthenticatedGuard)
 export class BranchesController {

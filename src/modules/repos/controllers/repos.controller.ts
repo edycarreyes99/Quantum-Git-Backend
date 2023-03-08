@@ -5,7 +5,16 @@ import { AuthenticatedGuard } from "../../auth/guards/authenticated/authenticate
 import { IAuthenticatedUser } from "../../auth/interfaces/authenticated-user.interface";
 import { IPaginatedResponse } from "../../../core/interfaces/paginated-response.interface";
 import { IRepo } from "../interfaces/repo.interface";
+import { ApiBearerAuth, ApiHeader, ApiTags } from "@nestjs/swagger";
 
+@ApiTags('Repos')
+@ApiBearerAuth()
+
+@ApiHeader({
+  name: "Secondary_Authorization",
+  description: "GitHub Access Token",
+  required: true,
+})
 @Controller("repos")
 @UseGuards(AuthenticatedGuard)
 export class ReposController {
