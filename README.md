@@ -1,73 +1,70 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+<img src="src/assets/img/quantum-git-logo.svg" width="200" alt="Quantum Git Logo">
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+# Quantum Git
+**Built to track all commits of a git repository with your GitHub account.**
 
 ## Installation
+
+**You're going to need yarn. You can install it by run `npm i -g yarn`. You must have installed node.js 18.15.0**. Then, you
+can run the code:
 
 ```bash
 $ yarn install
 ```
 
+to install all the dependencies of the project
+
 ## Running the app
+
+To run the app locally, first you need to have set up the environment variables. The unique environment
+file that you need to serve the app without problems is the `.env` file. Then you can run the following code to start
+the application:
 
 ```bash
 # development
-$ yarn run start
+$ yarn start
 
 # watch mode
-$ yarn run start:dev
+$ yarn start:dev
 
 # production mode
-$ yarn run start:prod
+$ yarn start:prod
 ```
 
-## Test
+## Info
 
-```bash
-# unit tests
-$ yarn run test
+This project was thinking to be very scalable, so it's divided in modules. Each module has its own controllers,
+services, and other stuffs that are related to it. I use swagger to document the API, so you can check the documentation
+on the `/api` route once the app been started.
 
-# e2e tests
-$ yarn run test:e2e
+## Dependencies
 
-# test coverage
-$ yarn run test:cov
-```
+* **@nestjs/passport** - A package that helps to integrate passport with nestjs.
 
-## Support
+* **@nestjs/swagger** - A package that helps to integrate swagger with nestjs and build the API's documentation.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+* **dotenv** - A package that helps to manage the environment variables.
 
-## Stay in touch
+* **passport** - A package that helps to manage the authentication.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+* **passport-jwt** - A package that helps to manage the authentication with jwt.
 
-## License
+* **helmet** - A package that helps to secure the app.
 
-Nest is [MIT licensed](LICENSE).
+* **firebase-admin** - A package that helps to manage the firebase from the server side.
+
+* **octokit.js** - A library to manage the GitHub API, recommended by the GitHub's developers.
+
+## Attachments
+![](src/assets/img/readme-files/modules.png)
+![](src/assets/img/readme-files/modules-expanded.png)
+![](src/assets/img/readme-files/authentication-modal.png)
+![](src/assets/img/readme-files/repos-controller.png)
+![](src/assets/img/readme-files/branches-controller.png)
+![](src/assets/img/readme-files/users-controller.png)
+![](src/assets/img/readme-files/commits-controller.png)
+![](src/assets/img/readme-files/execution-test-authorization-modal.png)
+![](src/assets/img/readme-files/repos-execution-test-1.png)
+![](src/assets/img/readme-files/repos-execution-test-2.png)
