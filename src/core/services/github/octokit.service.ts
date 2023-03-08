@@ -3,6 +3,8 @@ import { IPaginatedResponse } from "../../interfaces/paginated-response.interfac
 import { Logger } from "@nestjs/common";
 import { parsePaginationString } from "../../utils/pagination";
 import { OctokitResponse } from "@octokit/types/dist-types/OctokitResponse";
+import { IUser } from "../../../modules/users/interfaces/user.interface";
+import { GET_CURRENT_GITHUB_USER_URL } from "../../constants/user.constants";
 
 export abstract class OctokitService<T> {
   private readonly logger = new Logger(OctokitService.name);
@@ -33,6 +35,21 @@ export abstract class OctokitService<T> {
           this.logger.error(`Error executing github request: ${error}`);
           rejects(error);
         });
+      });
+    });
+  }
+
+  public getCurrentAuthenticatedGitHubUser(githubAccessToken: string): Promise<IUser> {
+    return new Promise<IUser>(async (resolve, rejects) => {
+      this.initialize(githubAccessToken).then(async () => {
+        await this.octokit.request(GET_CURRENT_GITHUB_USER_URL).then((user) => {
+          resolve(user["data"] as any);
+        }).catch((error) => {
+          this.logger.error(`Error fetching the current github user authenticated: ${error}`);
+          rejects(error);
+        });
+      }).catch((error) => {
+        rejects(error);
       });
     });
   }
