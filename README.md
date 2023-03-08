@@ -7,7 +7,7 @@
 
 ## Installation
 
-**You're going to need yarn. You can install it by run `npm i -g yarn`. You must have installed node.js 18.15.0**. Then, you
+**You're going to need yarn. You can install it by run `npm i -g yarn`. You must have installed node.js 18.12.1**. Then, you
 can run the code:
 
 ```bash
