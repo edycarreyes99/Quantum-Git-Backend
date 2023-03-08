@@ -11,7 +11,7 @@ export class RepoPaginationOptions implements IRepoPaginationOptions {
   sort: "created" | "updated" | "pushed" | "full_name" = "updated";
   direction: "asc" | "desc" = this.sort === "full_name" ? "asc" : "desc";
   page: number = 1;
-  per_page: number = 30;
+  per_page: number = 35;
   since: string = "";
   visibility: "all" | "public" | "private" = "all";
   type:

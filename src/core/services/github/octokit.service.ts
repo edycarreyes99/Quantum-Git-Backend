@@ -1,8 +1,8 @@
 import { Octokit } from "octokit";
 import { IPaginatedResponse } from "../../interfaces/paginated-response.interface";
 import { Logger } from "@nestjs/common";
-import { OctokitResponse } from "@octokit/types/dist-types/OctokitResponse";
 import { parsePaginationString } from "../../utils/pagination";
+import { OctokitResponse } from "@octokit/types/dist-types/OctokitResponse";
 
 export abstract class OctokitService<T> {
   private readonly logger = new Logger(OctokitService.name);
