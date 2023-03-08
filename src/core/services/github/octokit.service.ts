@@ -24,7 +24,7 @@ export abstract class OctokitService<T> {
       await this.initialize(githubAccessToken).then(async () => {
         await this.octokit.request(requestUrl, params).then((response: OctokitResponse<T[]>) => {
           const paginatedResponse: IPaginatedResponse<T> = {
-            ...parsePaginationString(response.headers.link),
+            ...parsePaginationString(response.headers.link ?? ''),
             data: response.data,
           };
 
