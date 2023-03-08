@@ -1,1 +1,1 @@
-export const GET_CURRENT_GITHUB_USER_URL = 'GET /user';
+export const GET_CURRENT_GITHUB_USER_URL = "GET /user";

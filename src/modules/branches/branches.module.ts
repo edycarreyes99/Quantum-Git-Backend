@@ -1,9 +1,10 @@
-import { Module } from '@nestjs/common';
-import { BranchesService } from './services/branches.service';
-import { BranchesController } from './controllers/branches.controller';
+import { Module } from "@nestjs/common";
+import { BranchesService } from "./services/branches.service";
+import { BranchesController } from "./controllers/branches.controller";
 
 @Module({
   controllers: [BranchesController],
-  providers: [BranchesService]
+  providers: [BranchesService],
 })
-export class BranchesModule {}
+export class BranchesModule {
+}

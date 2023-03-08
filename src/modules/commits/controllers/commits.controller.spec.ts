@@ -1,8 +1,8 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { CommitsController } from './commits.controller';
-import { CommitsService } from '../services/commits.service';
+import { Test, TestingModule } from "@nestjs/testing";
+import { CommitsController } from "./commits.controller";
+import { CommitsService } from "../services/commits.service";
 
-describe('CommitsController', () => {
+describe("CommitsController", () => {
   let controller: CommitsController;
 
   beforeEach(async () => {
@@ -14,7 +14,7 @@ describe('CommitsController', () => {
     controller = module.get<CommitsController>(CommitsController);
   });
 
-  it('should be defined', () => {
+  it("should be defined", () => {
     expect(controller).toBeDefined();
   });
 });
