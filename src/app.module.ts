@@ -5,6 +5,7 @@ import { AuthModule } from "./modules/auth/auth.module";
 import { PassportModule } from "@nestjs/passport";
 import { ReposModule } from "./modules/repos/repos.module";
 import { BranchesModule } from './modules/branches/branches.module';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { BranchesModule } from './modules/branches/branches.module';
     PassportModule.register({ defaultStrategy: "firebase-jwt" }),
     ReposModule,
     BranchesModule,
+    UsersModule,
   ],
   controllers: [AppController],
   exports: [PassportModule],
