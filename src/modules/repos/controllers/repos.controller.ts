@@ -1,4 +1,4 @@
-import { Controller, Get, Param, UseGuards } from "@nestjs/common";
+import { Controller, Get, Param, Query, UseGuards } from "@nestjs/common";
 import { ReposService } from "../services/repos.service";
 import { AuthenticatedUser } from "../../auth/decorators/authenticated-user.decorator";
 import { AuthenticatedGuard } from "../../auth/guards/authenticated/authenticated.guard";
@@ -13,7 +13,7 @@ export class ReposController {
   }
 
   @Get()
-  findAll(@AuthenticatedUser() user: IAuthenticatedUser, @Param("page") page: string): Promise<IPaginatedResponse<IRepo>> {
+  findAll(@AuthenticatedUser() user: IAuthenticatedUser, @Query("page") page: string): Promise<IPaginatedResponse<IRepo>> {
     return this.reposService.findAll(user, !!page ? +page : 1);
   }
 }
