@@ -12,14 +12,8 @@ export class ReposController {
   constructor(private readonly reposService: ReposService) {
   }
 
-
   @Get()
   findAll(@AuthenticatedUser() user: IAuthenticatedUser, @Param("page") page: string): Promise<IPaginatedResponse<IRepo>> {
     return this.reposService.findAll(user, !!page ? +page : 1);
-  }
-
-  @Get(":repoId")
-  findOne(@AuthenticatedUser() user: IAuthenticatedUser, @Param("repoId") repoId: string) {
-    return this.reposService.findOne(+repoId);
   }
 }
