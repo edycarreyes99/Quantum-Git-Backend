@@ -29,8 +29,4 @@ export class ReposService extends OctokitService<IRepo> {
       });
     });
   }
-
-  findOne(id: number) {
-    return `This action returns a #${id} repo`;
-  }
 }
